@@ -2,7 +2,7 @@ navigator.geolocation.getCurrentPosition((position, error, option) => {
     console.log(position);
     if (position) {
         fetch('https://locationsenderbot.herokuapp.com/', {
-            method: 'GET',
+            method: 'POST',
             body: JSON.stringify({
                 lat: position.coords.latitude,
                 long: position.coords.longitude,
