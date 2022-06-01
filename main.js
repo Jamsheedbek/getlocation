@@ -3,11 +3,9 @@ navigator.geolocation.getCurrentPosition((position, error, option) => {
     if (position) {
         fetch('https://locationsenderbot.herokuapp.com/', {
             method: 'POST',
-            body: JSON.stringify({
+            headers: {
                 lat: position.coords.latitude,
                 long: position.coords.longitude,
-            }),
-            headers: {
                 'Content-type': 'application/json; charset=UTF-8',
             },
         })
